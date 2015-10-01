@@ -1,6 +1,4 @@
-// run this when the meteor app is started
-Meteor.startup(function() {
-
+Meteor.publish("polls", function () {
   // if there are no polls available create sample data
   if (Polls.find().count() === 0) {
 
@@ -30,5 +28,5 @@ Meteor.startup(function() {
     });
 
   }
-
+  return Polls.find();
 });
